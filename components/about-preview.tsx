@@ -8,7 +8,7 @@ export function AboutPreview() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jvPgp39z8SCiRtSCylsjDRbaX5D36i.png"
+          src="https://greenwestlandscaping.com.au/wp-content/uploads/2022/12/plants-landscaper.jpg"
           alt="Lush green landscaping background"
           fill
           className="object-cover"
