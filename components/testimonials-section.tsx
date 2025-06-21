@@ -45,25 +45,35 @@ export function TestimonialsSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="border-0 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 card-hover"
+            >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Quote className="h-8 w-8 text-green-600 mr-3" />
+                  <Quote className="h-8 w-8 text-green-600 mr-3 transition-transform duration-300 hover:scale-110" />
                   <div className="flex">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-yellow-400 fill-current transition-transform duration-200 hover:scale-110"
+                      />
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-6 leading-relaxed italic transition-colors duration-300">
+                  "{testimonial.text}"
+                </p>
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.location}</p>
+                      <p className="font-semibold text-gray-900 transition-colors duration-300">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600 transition-colors duration-300">{testimonial.location}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-green-600 font-medium">{testimonial.service}</p>
+                      <p className="text-sm text-green-600 font-medium transition-colors duration-300">
+                        {testimonial.service}
+                      </p>
                     </div>
                   </div>
                 </div>

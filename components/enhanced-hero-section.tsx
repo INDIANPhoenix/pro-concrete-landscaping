@@ -32,7 +32,7 @@ export function EnhancedHeroSection() {
     setIsVisible(true)
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 6000) // Increased from 5000 to 6000 for smoother experience
     return () => clearInterval(timer)
   }, [slides.length])
 
@@ -91,22 +91,22 @@ export function EnhancedHeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white px-8 group transition-all duration-300 hover:scale-105"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 group transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 asChild
               >
-                <Link href="/quote">
+                <Link href="/quote" className="flex items-center justify-center">
                   Start Your Quote Quiz
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-50 group transition-all duration-300 hover:scale-105"
+                className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white group transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 asChild
               >
-                <Link href="/portfolio">
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                <Link href="/portfolio" className="flex items-center justify-center">
+                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   View Our Work
                 </Link>
               </Button>
@@ -138,8 +138,8 @@ export function EnhancedHeroSection() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                    index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"
                   }`}
                 >
                   <Image

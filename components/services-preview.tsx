@@ -160,7 +160,7 @@ export function ServicesPreview() {
             return (
               <Card
                 key={service.title}
-                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white"
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-white card-hover"
               >
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
@@ -169,25 +169,25 @@ export function ServicesPreview() {
                       alt={service.title}
                       width={400}
                       height={300}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                     />
-                    <div className="absolute top-4 left-4 bg-green-600 p-2 rounded-full">
+                    <div className="absolute top-4 left-4 bg-green-600 p-2 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:bg-green-700">
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{service.description}</p>
                     <Button
                       variant="ghost"
-                      className="text-green-600 hover:text-green-700 p-0 h-auto font-semibold group/btn"
+                      className="text-green-600 hover:text-green-700 p-0 h-auto font-semibold group/btn transition-all duration-300"
                       asChild
                     >
                       <Link href={service.href}>
                         Learn More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                       </Link>
                     </Button>
                   </div>
@@ -202,10 +202,10 @@ export function ServicesPreview() {
             onClick={() => setShowAll(!showAll)}
             size="lg"
             variant="outline"
-            className="bg-white text-green-600 border-white hover:bg-green-50 transition-all duration-300"
+            className="bg-white text-green-600 border-white hover:bg-green-50 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {showAll ? "Show Less Services" : "Show All Services"}
-            <ArrowRight className={`ml-2 h-5 w-5 transition-transform ${showAll ? "rotate-180" : ""}`} />
+            <ArrowRight className={`ml-2 h-5 w-5 transition-transform duration-500 ${showAll ? "rotate-180" : ""}`} />
           </Button>
         </div>
       </div>
