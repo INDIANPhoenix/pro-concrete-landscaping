@@ -9,18 +9,20 @@ import { AboutPreview } from "@/components/about-preview"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
-      <EnhancedHeroSection />
-      <ServicesPreview />
-      <WhyChooseUs />
-      <ProcessSection />
-      <TestimonialsSection />
-      <ServiceAreas />
-      <AboutPreview />
-      <ContactSection />
+      <main className="w-full">
+        <EnhancedHeroSection />
+        <ServicesPreview />
+        <AboutPreview />
+        <WhyChooseUs />
+        <ProcessSection />
+        <TestimonialsSection />
+        <ServiceAreas />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   )

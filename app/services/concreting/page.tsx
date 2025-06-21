@@ -23,10 +23,10 @@ export default function ConcretingPage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-slate-50 to-zinc-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-slate-50 to-zinc-50 overflow-hidden w-full">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
             className="absolute inset-0"
             style={{
@@ -34,7 +34,7 @@ export default function ConcretingPage() {
             }}
           />
         </div>
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-gray-100 text-gray-800 hover:bg-gray-200">
               <Hammer className="w-4 h-4 mr-2" />
@@ -45,13 +45,13 @@ export default function ConcretingPage() {
               From driveways to patios, we deliver high-quality concrete work that stands the test of time. Professional
               installation with attention to detail and lasting results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gray-800 hover:bg-gray-900">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+              <Button size="lg" className="bg-gray-800 hover:bg-gray-900 relative z-30" asChild>
                 <Link href="/quote" className="flex items-center">
                   Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="relative z-30" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -60,7 +60,7 @@ export default function ConcretingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Our Concrete Services</h2>
@@ -81,7 +81,7 @@ export default function ConcretingPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Our Process</h2>
@@ -103,15 +103,20 @@ export default function ConcretingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-800 to-slate-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-gray-800 to-slate-900 text-white w-full">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Need Professional Concrete Work?</h2>
           <p className="text-xl mb-8 opacity-90">Get a free consultation and quote today</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+            <Button size="lg" variant="secondary" className="relative z-30" asChild>
               <Link href="/quote">Request Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-gray-800 relative z-30"
+              asChild
+            >
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

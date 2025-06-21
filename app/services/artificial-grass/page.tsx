@@ -23,10 +23,10 @@ export default function ArtificialGrassPage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-100 via-lime-50 to-emerald-100 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative py-20 bg-gradient-to-br from-green-100 via-lime-50 to-emerald-100 overflow-hidden w-full">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
             className="absolute inset-0"
             style={{
@@ -34,7 +34,7 @@ export default function ArtificialGrassPage() {
             }}
           />
         </div>
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-lime-100 text-lime-800 hover:bg-lime-200">
               <Grass className="w-4 h-4 mr-2" />
@@ -45,13 +45,13 @@ export default function ArtificialGrassPage() {
               Enjoy a lush, green lawn without the maintenance. Our premium artificial grass looks natural, feels great,
               and saves you time and water.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-lime-600 hover:bg-lime-700">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+              <Button size="lg" className="bg-lime-600 hover:bg-lime-700 relative z-30" asChild>
                 <Link href="/quote" className="flex items-center">
                   Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="relative z-30" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -60,7 +60,7 @@ export default function ArtificialGrassPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Why Choose Artificial Grass?</h2>
@@ -81,7 +81,7 @@ export default function ArtificialGrassPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gradient-to-br from-lime-50 to-green-50">
+      <section className="py-16 bg-gradient-to-br from-lime-50 to-green-50 w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Installation Process</h2>
@@ -103,15 +103,20 @@ export default function ArtificialGrassPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-lime-600 to-green-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-lime-600 to-green-700 text-white w-full">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for a Perfect Lawn?</h2>
           <p className="text-xl mb-8 opacity-90">Transform your outdoor space with premium artificial grass</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+            <Button size="lg" variant="secondary" className="relative z-30" asChild>
               <Link href="/quote">Request Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-lime-600">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-lime-600 relative z-30"
+              asChild
+            >
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

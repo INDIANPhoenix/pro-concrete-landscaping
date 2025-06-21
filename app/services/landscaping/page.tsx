@@ -23,10 +23,10 @@ export default function LandscapingPage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 overflow-hidden w-full">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
             className="absolute inset-0"
             style={{
@@ -34,7 +34,7 @@ export default function LandscapingPage() {
             }}
           />
         </div>
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200">
               <Leaf className="w-4 h-4 mr-2" />
@@ -45,13 +45,13 @@ export default function LandscapingPage() {
               Create stunning landscapes that enhance your property value and provide years of enjoyment. Our expert
               team designs and installs beautiful, sustainable outdoor environments.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 relative z-30" asChild>
                 <Link href="/quote" className="flex items-center">
                   Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="relative z-30" asChild>
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -60,7 +60,7 @@ export default function LandscapingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">What's Included</h2>
@@ -81,7 +81,7 @@ export default function LandscapingPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 w-full">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Our Process</h2>
@@ -103,15 +103,20 @@ export default function LandscapingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-emerald-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-green-600 to-emerald-700 text-white w-full">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Landscape?</h2>
           <p className="text-xl mb-8 opacity-90">Get a free consultation and quote today</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+            <Button size="lg" variant="secondary" className="relative z-30" asChild>
               <Link href="/quote">Request Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-green-600 relative z-30"
+              asChild
+            >
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

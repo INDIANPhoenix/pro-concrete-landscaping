@@ -9,8 +9,12 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                <div className="text-white font-bold">PC</div>
+              <div className="w-10 h-10 bg-white rounded-full overflow-hidden p-1">
+                <img
+                  src="/logo.png"
+                  alt="Pro Concrete & Landscaping Logo"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-green-400 leading-tight">PRO CONCRETE</span>
@@ -27,32 +31,32 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/landscaping" className="hover:text-green-400">
                   Landscaping
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/concreting" className="hover:text-green-400">
                   Concreting
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/artificial-grass" className="hover:text-green-400">
                   Artificial Grass
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/exposed-concrete" className="hover:text-green-400">
                   Exposed Concrete
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/retaining-walls" className="hover:text-green-400">
                   Retaining Walls
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-green-400">
+                <Link href="/services/mulching" className="hover:text-green-400">
                   Mulching
                 </Link>
               </li>

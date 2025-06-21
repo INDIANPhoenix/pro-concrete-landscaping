@@ -29,22 +29,22 @@ export function Header() {
       href: "/services",
       hasDropdown: true,
       services: [
-        { name: "Landscaping Design", href: "/services/landscaping-design" },
-        { name: "Concrete Driveways", href: "/services/concrete-driveways" },
+        { name: "Landscaping", href: "/services/landscaping" },
+        { name: "Concreting", href: "/services/concreting" },
         { name: "Artificial Grass", href: "/services/artificial-grass" },
         { name: "Exposed Concrete", href: "/services/exposed-concrete" },
         { name: "Retaining Walls", href: "/services/retaining-walls" },
-        { name: "Garden Mulching", href: "/services/garden-mulching" },
+        { name: "Mulching", href: "/services/mulching" },
         { name: "Letterbox Installation", href: "/services/letterbox-installation" },
-        { name: "Pool Landscaping", href: "/services/pool-landscaping" },
-        { name: "Concrete Patios", href: "/services/concrete-patios" },
-        { name: "Decorative Concrete", href: "/services/decorative-concrete" },
-        { name: "Garden Maintenance", href: "/services/garden-maintenance" },
-        { name: "Concrete Foundations", href: "/services/concrete-foundations" },
-        { name: "Turf Installation", href: "/services/turf-installation" },
+        { name: "Paving & Pathways", href: "/services/paving-pathways" },
+        { name: "Garden Design", href: "/services/garden-design" },
         { name: "Irrigation Systems", href: "/services/irrigation-systems" },
-        { name: "Concrete Repairs", href: "/services/concrete-repairs" },
         { name: "Outdoor Lighting", href: "/services/outdoor-lighting" },
+        { name: "Decking", href: "/services/decking" },
+        { name: "Pool Surrounds", href: "/services/pool-surrounds" },
+        { name: "Driveway Construction", href: "/services/driveway-construction" },
+        { name: "Garden Maintenance", href: "/services/garden-maintenance" },
+        { name: "Pergolas & Gazebos", href: "/services/pergolas-gazebos" },
       ],
     },
     { name: "Portfolio", href: "/portfolio" },
@@ -89,8 +89,8 @@ export function Header() {
             className="flex items-center space-x-2 touch-manipulation"
             aria-label="Pro Concrete & Landscaping Home"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-full flex items-center justify-center">
-              <div className="text-white font-bold text-sm sm:text-lg">PC</div>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+              <img src="/logo.png" alt="Pro Concrete & Landscaping Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-green-800 text-sm sm:text-lg leading-tight">PRO CONCRETE</span>
