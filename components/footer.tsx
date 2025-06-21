@@ -1,134 +1,144 @@
-'use client';
+import Link from "next/link"
+import { Phone, Mail, MapPin } from "lucide-react"
 
-import React from 'react';
-import Link from 'next/link';
-import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+const services = [
+  { name: "Landscaping", path: "/services/landscaping" },
+  { name: "Concreting", path: "/services/concreting" },
+  { name: "Artificial Grass", path: "/services/artificial-grass" },
+  { name: "Exposed Concrete", path: "/services/exposed-concrete" },
+  { name: "Retaining Walls", path: "/services/retaining-walls" },
+  { name: "Mulching", path: "/services/mulching" },
+  { name: "Letterbox Installation", path: "/services/letterbox-installation" },
+  { name: "Paving & Pathways", path: "/services/paving-pathways" },
+  { name: "Garden Design", path: "/services/garden-design" },
+  { name: "Irrigation Systems", path: "/services/irrigation-systems" },
+  { name: "Outdoor Lighting", path: "/services/outdoor-lighting" },
+  { name: "Decking", path: "/services/decking" },
+]
 
-const Footer = () => {
+export function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid md:grid-cols-12 gap-8">
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Pro Concrete & Landscaping</h3>
-            <p className="text-gray-300 mb-4">
-              Transforming outdoor spaces with professional concrete and landscaping solutions.
+          <div className="md:col-span-3 space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-white rounded-full overflow-hidden p-1">
+                <img
+                  src="/logo.png"
+                  alt="Pro Concrete & Landscaping Logo"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-green-400 leading-tight">PRO CONCRETE</span>
+                <span className="font-bold text-green-300 text-sm leading-tight">& LANDSCAPING</span>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm">
+              Turning dirt into dreams with professional concrete and landscaping services.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-500 transition-colors"
-              >
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-500 transition-colors"
-              >
-                <Instagram className="h-6 w-6" />
-              </a>
+            {/* Contact Info */}
+            <div className="space-y-3 text-gray-400 pt-4">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span>0470 432 212</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4" />
+                <span className="text-sm">proconcretelandscaping@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4" />
+                <span>Perth & Surrounding Areas</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Services - Split into two columns */}
+          <div className="md:col-span-5">
+            <h3 className="font-bold text-lg mb-4">Services</h3>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {services.map((service) => (
+                <div key={service.path}>
+                  <Link href={service.path} className="text-gray-400 hover:text-green-400">
+                    {service.name}
+                </Link>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className="md:col-span-2">
+            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-green-500 transition-colors">
-                  About Us
+                <Link href="/" className="hover:text-green-400">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-green-500 transition-colors">
+                <Link href="/about" className="hover:text-green-400">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-green-400">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-300 hover:text-green-500 transition-colors">
+                <Link href="/portfolio" className="hover:text-green-400">
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-green-500 transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/quote" className="text-gray-300 hover:text-green-500 transition-colors">
+                <Link href="/quote" className="hover:text-green-400">
                   Get Quote
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Our Services</h3>
-            <ul className="space-y-2">
               <li>
-                <Link href="/services/landscaping" className="text-gray-300 hover:text-green-500 transition-colors">
-                  Landscaping
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/concreting" className="text-gray-300 hover:text-green-500 transition-colors">
-                  Concreting
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/artificial-grass" className="text-gray-300 hover:text-green-500 transition-colors">
-                  Artificial Grass
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/garden-design" className="text-gray-300 hover:text-green-500 transition-colors">
-                  Garden Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-green-500 transition-colors">
-                  View All Services →
+                <Link href="/contact" className="hover:text-green-400">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-green-500" />
-                <a href="tel:0470432212" className="text-gray-300 hover:text-green-500 transition-colors">
-                  0470 432 212
-                </a>
+          {/* Social Media & Additional Links */}
+          <div className="md:col-span-2">
+            <h3 className="font-bold text-lg mb-4">Connect</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/blog" className="hover:text-green-400">
+                  Blog
+                </Link>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-green-500" />
-                <a
-                  href="mailto:proconcretelandscaping@gmail.com"
-                  className="text-gray-300 hover:text-green-500 transition-colors"
-                >
-                  proconcretelandscaping@gmail.com
-                </a>
+              <li>
+                <Link href="/testimonials" className="hover:text-green-400">
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-green-400">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-green-400">
+                  Careers
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Pro Concrete & Landscaping. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2024 Pro Concrete & Landscaping. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

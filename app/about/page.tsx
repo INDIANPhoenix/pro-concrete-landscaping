@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Award, Users, Clock, Shield } from "lucide-react"
 import Image from "next/image"
+import { serviceImages } from "@/public/images/services"
 
 export default function AboutPage() {
   return (
@@ -23,7 +24,7 @@ export default function AboutPage() {
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=500&width=500"
+                src={serviceImages.landscaping.main}
                 alt="Pro Concrete & Landscaping team"
                 width={500}
                 height={500}
@@ -52,7 +53,7 @@ export default function AboutPage() {
             </div>
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src={serviceImages.concreting.main}
                 alt="Our work in progress"
                 width={500}
                 height={400}
@@ -117,7 +118,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src={serviceImages.gardenDesign.main}
                 alt="Quality workmanship"
                 width={500}
                 height={400}

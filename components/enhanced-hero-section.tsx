@@ -5,38 +5,57 @@ import { Button } from "@/components/ui/button"
 import { Star, Phone, ArrowRight, Play } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-
-export function EnhancedHeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+import { serviceImages } from "@/public/images/services"
+import { ErrorBoundary } from "@/components/error-boundary"
+import { LoadingSpinner } from "@/components/loading-spinner"
 
   const slides = [
     {
       title: "Turning Dirt Into Dreams",
       subtitle: "Professional concrete and landscaping services",
-      image: "/placeholder.svg?height=600&width=800",
+    image: serviceImages.landscaping.main,
     },
     {
       title: "Expert Concreting Solutions",
       subtitle: "Driveways, patios, and structural concrete work",
-      image: "/placeholder.svg?height=600&width=800",
+    image: serviceImages.concreting.main,
     },
     {
       title: "Beautiful Landscape Design",
       subtitle: "Transform your outdoor space into paradise",
-      image: "/placeholder.svg?height=600&width=800",
+    image: serviceImages.gardenDesign.main,
     },
   ]
 
+export function EnhancedHeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
     setIsVisible(true)
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000)
+    const slideTimer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 6000) // Increased from 5000 to 6000 for smoother experience
-    return () => clearInterval(timer)
+    }, 6000)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(slideTimer)
+    }
   }, [slides.length])
 
+  if (isLoading) {
+    return (
+      <section className="relative bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+        <div className="flex items-center justify-center min-h-[600px]">
+          <LoadingSpinner size="lg" />
+        </div>
+      </section>
+    )
+  }
+
   return (
+    <ErrorBoundary>
     <section className="relative bg-gradient-to-br from-blue-50 to-blue-100 py-20 overflow-hidden">
       {/* Background Animation */}
       <div className="absolute inset-0 opacity-10">
@@ -143,11 +162,12 @@ export function EnhancedHeroSection() {
                   }`}
                 >
                   <Image
-                    src={slide.image || "/placeholder.svg"}
+                      src={slide.image}
                     alt={slide.title}
-                    width={600}
-                    height={600}
-                    className="object-cover w-full h-full"
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               ))}
@@ -161,6 +181,7 @@ export function EnhancedHeroSection() {
                     className={`w-3 h-3 rounded-full transition-all ${
                       index === currentSlide ? "bg-white" : "bg-white/50"
                     }`}
+                      aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
               </div>
@@ -176,5 +197,6 @@ export function EnhancedHeroSection() {
         </div>
       </div>
     </section>
+    </ErrorBoundary>
   )
 }

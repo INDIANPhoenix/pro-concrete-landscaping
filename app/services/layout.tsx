@@ -1,18 +1,12 @@
-import React from 'react';
-import ErrorBoundary from '@/components/error-boundary';
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
-export default function ServicesLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ServicesLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ErrorBoundary>
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-7xl mx-auto">
-          {children}
-        </div>
-      </div>
-    </ErrorBoundary>
-  );
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
+  )
 } 
