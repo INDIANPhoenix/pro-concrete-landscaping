@@ -129,4 +129,4 @@ export const serviceImages = {
   },
 } as const
 
-export type ServiceImageKey = keyof typeof serviceImages 
+export type ServiceImageKey = keyof typeof serviceImages
