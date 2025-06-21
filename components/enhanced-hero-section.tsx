@@ -94,7 +94,7 @@ export function EnhancedHeroSection() {
                 className="bg-green-600 hover:bg-green-700 text-white px-8 group transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 asChild
               >
-                <Link href="/quote" className="flex items-center justify-center border-solid border-zinc-700 border px-2.5 py-2.5 rounded-md">
+                <Link href="/quote" className="flex items-center justify-center">
                   Start Your Quote Quiz
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
@@ -105,7 +105,7 @@ export function EnhancedHeroSection() {
                 className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white group transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 asChild
               >
-                <Link href="/portfolio" className="flex items-center justify-center border border-zinc-600 border-solid rounded-md px-2.5 py-2.5">
+                <Link href="/portfolio" className="flex items-center justify-center">
                   <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   View Our Work
                 </Link>
