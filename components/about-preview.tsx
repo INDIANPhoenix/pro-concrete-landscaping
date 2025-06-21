@@ -65,7 +65,7 @@ export function AboutPreview() {
                 className="border-gray-400 text-white hover:bg-white/10 font-semibold px-8"
                 asChild
               >
-                <Link href="/portfolio">📁 VIEW PORTFOLIO</Link>
+                <Link href="/portfolio">VIEW PORTFOLIO</Link>
               </Button>
             </div>
           </div>
