@@ -49,13 +49,18 @@ export function WhyChooseUs() {
           {features.map((feature, index) => {
             const IconComponent = feature.icon
             return (
-              <Card key={feature.title} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={feature.title}
+                className="text-center hover:shadow-lg transition-all duration-500 hover:-translate-y-2 card-hover"
+              >
                 <CardContent className="p-8">
-                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="h-8 w-8 text-green-600" />
+                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 hover:bg-green-200 hover:scale-110">
+                    <IconComponent className="h-8 w-8 text-green-600 transition-transform duration-300 hover:scale-110" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors duration-300 hover:text-green-600">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 transition-colors duration-300">{feature.description}</p>
                 </CardContent>
               </Card>
             )

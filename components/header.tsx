@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Menu, Phone, Mail, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -80,23 +79,30 @@ export function Header() {
             {navigation.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-green-600 font-medium transition-colors">
+                  <div className="relative group">
+                    <button className="flex items-center text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">
                       {item.name}
-                      <ChevronDown className="ml-1 h-4 w-4" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56">
-                      {item.services?.map((service) => (
-                        <DropdownMenuItem key={service.name} asChild>
-                          <Link href={service.href} className="w-full">
+                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                    </button>
+                    <div className="absolute top-full left-0 w-56 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                      <div className="py-2">
+                        {item.services?.map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200"
+                          >
                             {service.name}
                           </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ) : (
-                  <Link href={item.href} className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300"
+                  >
                     {item.name}
                   </Link>
                 )}
