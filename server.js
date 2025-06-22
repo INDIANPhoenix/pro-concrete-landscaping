@@ -26,4 +26,4 @@ app.prepare().then(() => {
   .listen(port, () => {
     console.log(`> Ready on http://${hostname}:${port}`)
   })
-}) 
+})
