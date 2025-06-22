@@ -1,6 +1,6 @@
 "use client"
 
-import { useActionState } from "react"
+import { useState } from "react"
 import { submitContactForm } from "@/app/actions/contact"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,7 +9,15 @@ import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 export function ContactSection() {
-  const [state, action, isPending] = useActionState(submitContactForm, null)
+  const [state, setState] = useState<{ success?: boolean; message?: string; error?: string } | null>(null)
+  const [isPending, setIsPending] = useState(false)
+
+  async function handleSubmit(formData: FormData) {
+    setIsPending(true)
+    const result = await submitContactForm(formData)
+    setState(result)
+    setIsPending(false)
+  }
 
   return (
     <section className="py-20 bg-green-600">
@@ -39,7 +47,7 @@ export function ContactSection() {
                 </div>
               )}
 
-              <form action={action} className="space-y-6">
+              <form action={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <Input name="firstName" placeholder="First Name" className="border-gray-300" required />
                   <Input name="lastName" placeholder="Last Name" className="border-gray-300" required />
