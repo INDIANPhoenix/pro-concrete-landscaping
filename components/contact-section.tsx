@@ -1,3 +1,7 @@
+"use client"
+
+import { useActionState } from "react"
+import { submitContactForm } from "@/app/actions/contact"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -5,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 export function ContactSection() {
+  const [state, action, isPending] = useActionState(submitContactForm, null)
+
   return (
     <section className="py-20 bg-green-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,17 +26,41 @@ export function ContactSection() {
           <Card className="shadow-xl">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h3>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <Input placeholder="First Name" className="border-gray-300" />
-                  <Input placeholder="Last Name" className="border-gray-300" />
+
+              {state?.success && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-700">{state.message}</p>
                 </div>
-                <Input placeholder="Email Address" type="email" className="border-gray-300" />
-                <Input placeholder="Phone Number" type="tel" className="border-gray-300" />
-                <Input placeholder="Service Required" className="border-gray-300" />
-                <Textarea placeholder="Tell us about your project..." rows={4} className="border-gray-300" />
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white" size="lg">
-                  Send Message
+              )}
+
+              {state?.error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-700">{state.error}</p>
+                </div>
+              )}
+
+              <form action={action} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input name="firstName" placeholder="First Name" className="border-gray-300" required />
+                  <Input name="lastName" placeholder="Last Name" className="border-gray-300" required />
+                </div>
+                <Input name="email" placeholder="Email Address" type="email" className="border-gray-300" required />
+                <Input name="phone" placeholder="Phone Number" type="tel" className="border-gray-300" required />
+                <Input name="service" placeholder="Service Required" className="border-gray-300" />
+                <Textarea
+                  name="message"
+                  placeholder="Tell us about your project..."
+                  rows={4}
+                  className="border-gray-300"
+                  required
+                />
+                <Button
+                  type="submit"
+                  disabled={isPending}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  size="lg"
+                >
+                  {isPending ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>

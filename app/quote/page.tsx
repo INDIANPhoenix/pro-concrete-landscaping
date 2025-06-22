@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress"
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { submitQuoteForm } from "@/app/actions/quote"
 
 export default function QuotePage() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -66,11 +67,16 @@ export default function QuotePage() {
     }
   }
 
-  const handleSubmit = () => {
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    // Redirect to thank you page
-    window.location.href = "/quote/thank-you"
+  const handleSubmit = async () => {
+    const result = await submitQuoteForm(formData)
+
+    if (result.success) {
+      // Redirect to thank you page
+      window.location.href = "/quote/thank-you"
+    } else {
+      // Show error message
+      alert(result.error)
+    }
   }
 
   const renderStep = () => {
