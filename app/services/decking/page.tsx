@@ -1,126 +1,122 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Home, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Home, Phone } from "lucide-react"
+import Image from "next/image"
 
 export default function DeckingPage() {
   const features = [
-    "Timber and composite decking options",
-    "Custom deck design and sizing",
-    "Weather-resistant materials",
-    "Professional structural support",
-    "Balustrade and railing installation",
-    "Maintenance and restoration services",
+    "Timber decking installation",
+    "Composite material options",
+    "Multi-level deck designs",
+    "Balustrades and railings",
+    "Weather protection treatments",
+    "Custom design solutions",
   ]
 
-  const process = [
-    { step: 1, title: "Design Consultation", description: "Plan deck size, style, and materials" },
-    { step: 2, title: "Site Preparation", description: "Level ground and prepare foundations" },
-    { step: 3, title: "Frame Construction", description: "Build structural frame and supports" },
-    { step: 4, title: "Decking Installation", description: "Install decking boards and fixings" },
-    { step: 5, title: "Finishing", description: "Add railings, staining, and final touches" },
+  const testimonials = [
+    {
+      name: "Steven Parker",
+      rating: 5,
+      text: "Outstanding decking work! Our new deck is perfect for entertaining and has added so much value to our home.",
+      image: "/placeholder-user.jpg",
+    },
+    {
+      name: "Michelle Roberts",
+      rating: 5,
+      text: "Professional service and beautiful craftsmanship. The deck exceeded our expectations in every way.",
+      image: "/placeholder-user.jpg",
+    },
+    {
+      name: "Tony Martinez",
+      rating: 5,
+      text: "Excellent attention to detail and quality materials. Our deck looks amazing and is built to last.",
+      image: "/placeholder-user.jpg",
+    },
+  ]
+
+  const faqs = [
+    {
+      question: "What Types Of Decking Materials Do You Use?",
+      answer:
+        "We work with various materials including hardwood timber, treated pine, and composite decking materials, each offering different benefits and aesthetics.",
+    },
+    {
+      question: "How Long Does A Decking Project Take To Complete?",
+      answer:
+        "Most residential decking projects take 3-7 days depending on size and complexity, including preparation, construction, and finishing work.",
+    },
+    {
+      question: "Do You Provide Design Services For Decking Projects?",
+      answer:
+        "Yes! We provide complete design services including layout planning, material selection, and custom features to create your perfect outdoor living space.",
+    },
   ]
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ea580c' fillOpacity='0.1'%3E%3Cpath d='M30 30c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15zm15 0c0-8.3-6.7-15-15-15s-15 6.7-15 15 6.7 15 15 15 15-6.7 15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
+      <section className="relative min-h-screen flex items-center">
+        <div className="absolute inset-0">
+          <Image src="/placeholder.jpg" alt="Professional Decking Services" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-200">
-              <Home className="w-4 h-4 mr-2" />
-              Professional Decking
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Beautiful Outdoor Decking</h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Create the perfect outdoor living space with professional decking. Quality materials, expert construction,
-              and designs built to last.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
-                <Link href="/quote" className="flex items-center">
-                  Get Free Quote <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline">
-                <Link href="/portfolio">View Our Work</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Decking Services</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <Badge className="mb-4 bg-orange-600/20 text-orange-300 border-orange-400">
+                <Home className="w-4 h-4 mr-2" />
+                Decking Specialists
+              </Badge>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Your Decking Experts in Perth
+              </h1>
+              <p className="text-xl mb-8 text-gray-200 leading-relaxed">
+                Custom decking solutions using premium materials to create beautiful outdoor living spaces perfect for
+                entertaining and relaxation with professional craftsmanship.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 transition-all duration-300 hover:scale-105">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now: 0470 432 212
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105"
+                >
+                  View Portfolio
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Construction Process</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {process.map((item, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-all hover:-translate-y-1">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                      {item.step}
-                    </div>
-                    <h3 className="font-semibold mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready for Your Dream Deck?</h2>
-          <p className="text-xl mb-8 opacity-90">Professional decking construction and installation</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              <Link href="/quote">Request Quote</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-orange-600"
-            >
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
+            {/* Contact Form */}
+            <div className="bg-white rounded-lg p-8 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Get Your Free Quote</h3>
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Tell us about your decking project..."
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300\"
