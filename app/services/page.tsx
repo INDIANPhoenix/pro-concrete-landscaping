@@ -347,32 +347,24 @@ export default function ServicesPage() {
 
       {/* Enhanced CTA Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                'url(\'data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fillRule="evenodd"%3E%3Cg fill="%23ffffff" fillOpacity="0.03"%3E%3Cpath d="M50 50c13.8 0 25-11.2 25-25S63.8 0 50 0 25 11.2 25 25s11.2 25 25 25zm25 25c13.8 0 25-11.2 25-25S88.8 25 75 25 50 36.2 50 50s11.2 25 25 25zM25 75c13.8 0 25-11.2 25-25S38.8 25 25 25 0 36.2 0 50s11.2 25 25 25z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-            }}
-          ></div>
+        {/* Simple background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-blue-500/10"></div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-green-500/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-24 h-24 bg-green-500/10 rounded-full animate-pulse animation-delay-300"></div>
+        {/* Remove all floating elements and complex patterns */}
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-in-up">Ready to Start Your Project?</h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto animate-fade-in-up animation-delay-200">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8">Ready to Start Your Project?</h2>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto">
             Contact us today for a free consultation and personalized quote for your concrete and landscaping needs.
             Let's transform your outdoor space together!
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animation-delay-400">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-12 py-4 text-lg font-semibold shadow-2xl hover-lift btn-animate"
+              className="bg-green-600 hover:bg-green-700 text-white px-12 py-4 text-lg font-semibold shadow-2xl"
               asChild
             >
               <Link href="/quote">Get Free Quote</Link>
@@ -380,14 +372,14 @@ export default function ServicesPage() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-gray-900 px-12 py-4 text-lg font-semibold shadow-2xl hover-lift"
+              className="border-white text-white hover:bg-white hover:text-gray-900 px-12 py-4 text-lg font-semibold shadow-2xl"
               asChild
             >
               <Link href="tel:0470432212">Call Now: 0470 432 212</Link>
             </Button>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up animation-delay-600">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-green-400">500+</div>
               <div className="text-gray-300">Projects Completed</div>
