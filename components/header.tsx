@@ -1,27 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { Menu, Phone, Mail, ChevronDown, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -61,7 +49,7 @@ export function Header() {
           <div className="flex items-center gap-2 sm:gap-4">
             <a
               href="tel:0470432212"
-              className="flex items-center gap-1 sm:gap-2 hover:text-green-200 transition-colors touch-manipulation"
+              className="flex items-center gap-1 sm:gap-2 hover:text-green-200 transition-colors duration-300"
               aria-label="Call us at 0470 432 212"
             >
               <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
@@ -69,7 +57,7 @@ export function Header() {
             </a>
             <a
               href="mailto:proconcretelandscaping@gmail.com"
-              className="hidden sm:flex items-center gap-2 hover:text-green-200 transition-colors touch-manipulation"
+              className="hidden sm:flex items-center gap-2 hover:text-green-200 transition-colors duration-300"
               aria-label="Email us"
             >
               <Mail className="h-4 w-4" />
@@ -86,11 +74,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 touch-manipulation"
-            aria-label="Pro Concrete & Landscaping Home"
-          >
+          <Link href="/" className="flex items-center space-x-2" aria-label="Pro Concrete & Landscaping Home">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
               <img src="/logo.png" alt="Pro Concrete & Landscaping Logo" className="w-full h-full object-cover" />
             </div>
@@ -108,7 +92,7 @@ export function Header() {
                   <div className="relative group">
                     <Link
                       href={item.href}
-                      className="flex items-center text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 touch-manipulation min-h-[44px]"
+                      className="flex items-center text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 min-h-[44px]"
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
@@ -121,7 +105,7 @@ export function Header() {
                           <Link
                             key={service.name}
                             href={service.href}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200 touch-manipulation"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors duration-200"
                             role="menuitem"
                           >
                             {service.name}
@@ -133,7 +117,7 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center ${
+                    className={`text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 min-h-[44px] flex items-center ${
                       pathname === item.href ? "text-green-600" : ""
                     }`}
                   >
@@ -146,7 +130,10 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-green-600 hover:bg-green-700 text-white touch-manipulation" asChild>
+            <Button
+              className="bg-green-600 hover:bg-green-700 text-white transition-all duration-300 hover:scale-105"
+              asChild
+            >
               <Link href="/quote">Get Free Quote</Link>
             </Button>
           </div>
@@ -157,25 +144,24 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden touch-manipulation min-h-[44px] min-w-[44px]"
+                className="md:hidden min-h-[44px] min-w-[44px]"
                 aria-label="Open navigation menu"
               >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[350px] overflow-y-auto">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-lg font-semibold">Navigation</h2>
-                <SheetClose asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="touch-manipulation min-h-[44px] min-w-[44px]"
-                    aria-label="Close navigation menu"
-                  >
-                    <X className="h-6 w-6" />
-                  </Button>
-                </SheetClose>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="min-h-[44px] min-w-[44px]"
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Close navigation menu"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
               </div>
 
               <div className="flex flex-col space-y-4">
@@ -183,7 +169,7 @@ export function Header() {
                   <div key={item.name}>
                     <Link
                       href={item.href}
-                      className={`text-lg font-medium text-gray-700 hover:text-green-600 block py-2 touch-manipulation ${
+                      className={`text-lg font-medium text-gray-700 hover:text-green-600 block py-2 transition-colors duration-300 ${
                         pathname === item.href ? "text-green-600" : ""
                       }`}
                       onClick={() => setIsOpen(false)}
@@ -191,12 +177,12 @@ export function Header() {
                       {item.name}
                     </Link>
                     {item.hasDropdown && (
-                      <div className="ml-4 mt-2 space-y-2">
+                      <div className="ml-4 mt-2 space-y-2 max-h-60 overflow-y-auto">
                         {item.services?.map((service) => (
                           <Link
                             key={service.name}
                             href={service.href}
-                            className={`text-sm text-gray-600 hover:text-green-600 block py-2 touch-manipulation ${
+                            className={`text-sm text-gray-600 hover:text-green-600 block py-2 transition-colors duration-300 ${
                               pathname === service.href ? "text-green-600" : ""
                             }`}
                             onClick={() => setIsOpen(false)}
@@ -208,6 +194,17 @@ export function Header() {
                     )}
                   </div>
                 ))}
+
+                {/* Mobile CTA Button */}
+                <div className="pt-4 border-t border-gray-200">
+                  <Button
+                    className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-300"
+                    asChild
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Link href="/quote">Get Free Quote</Link>
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
