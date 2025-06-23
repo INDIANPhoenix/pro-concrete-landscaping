@@ -23,6 +23,11 @@ const nextConfig = {
   generateEtags: false,
   poweredByHeader: false,
   compress: true,
+  experimental: {
+    optimizeCss: true,
+    workerThreads: false,
+    cpus: 1
+  }
 }
 
 export default nextConfig
