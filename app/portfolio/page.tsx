@@ -8,38 +8,38 @@ const portfolioItems = [
   {
     title: "Modern Concrete Driveway",
     category: "Concreting",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Sleek exposed concrete driveway with decorative borders",
+    image: "/placeholder.jpg",
+    description: "A sleek, contemporary driveway design with exposed aggregate finish",
   },
   {
-    title: "Landscape Garden Design",
+    title: "Tropical Garden Oasis",
     category: "Landscaping",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Complete garden transformation with native plants",
+    image: "/placeholder.jpg",
+    description: "Complete garden transformation with native plants and water features",
   },
   {
-    title: "Artificial Grass Installation",
-    category: "Artificial Grass",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Premium synthetic turf for low-maintenance lawn",
+    title: "Elegant Pool Surround",
+    category: "Pool Surrounds",
+    image: "/placeholder.jpg",
+    description: "Custom pool surround with decorative concrete and lighting",
   },
   {
-    title: "Retaining Wall Project",
+    title: "Natural Stone Retaining Wall",
     category: "Retaining Walls",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Structural concrete block retaining wall with drainage",
+    image: "/placeholder.jpg",
+    description: "Engineered retaining wall with integrated garden beds",
   },
   {
-    title: "Outdoor Entertainment Area",
-    category: "Concreting",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Polished concrete patio with outdoor kitchen",
+    title: "Sustainable Garden Design",
+    category: "Garden Design",
+    image: "/placeholder.jpg",
+    description: "Water-wise garden with native plants and efficient irrigation",
   },
   {
-    title: "Front Yard Makeover",
-    category: "Landscaping",
-    image: "/placeholder.svg?height=300&width=400",
-    description: "Complete front yard redesign with mulching",
+    title: "Custom Outdoor Kitchen",
+    category: "Outdoor Living",
+    image: "/placeholder.jpg",
+    description: "Fully equipped outdoor kitchen with concrete countertops",
   },
 ]
 
@@ -66,7 +66,7 @@ export default function PortfolioPage() {
               <Card key={index} className="hover:shadow-xl transition-shadow overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <Image
-                    src={item.image || "/placeholder.svg"}
+                    src={item.image || "/placeholder.jpg"}
                     alt={item.title}
                     width={400}
                     height={300}

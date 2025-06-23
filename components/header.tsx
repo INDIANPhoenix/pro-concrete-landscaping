@@ -6,9 +6,11 @@ import { Menu, Phone, Mail, ChevronDown, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const pathname = usePathname()
 
   const navigation = [
@@ -75,8 +77,14 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" aria-label="Pro Concrete & Landscaping Home">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-              <img src="/logo.png" alt="Pro Concrete & Landscaping Logo" className="w-full h-full object-cover" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
+              <Image 
+                src="/placeholder-logo.png" 
+                alt="Pro Concrete & Landscaping Logo" 
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-green-800 text-sm sm:text-lg leading-tight">PRO CONCRETE</span>
@@ -151,58 +159,53 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[350px] overflow-y-auto">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-lg font-semibold">Navigation</h2>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="min-h-[44px] min-w-[44px]"
-                  onClick={() => setIsOpen(false)}
-                  aria-label="Close navigation menu"
-                >
-                  <X className="h-6 w-6" />
-                </Button>
-              </div>
-
               <div className="flex flex-col space-y-4">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      href={item.href}
-                      className={`text-lg font-medium text-gray-700 hover:text-green-600 block py-2 transition-colors duration-300 ${
-                        pathname === item.href ? "text-green-600" : ""
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                    {item.hasDropdown && (
-                      <div className="ml-4 mt-2 space-y-2 max-h-60 overflow-y-auto">
-                        {item.services?.map((service) => (
-                          <Link
-                            key={service.name}
-                            href={service.href}
-                            className={`text-sm text-gray-600 hover:text-green-600 block py-2 transition-colors duration-300 ${
-                              pathname === service.href ? "text-green-600" : ""
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {service.name}
-                          </Link>
-                        ))}
-                      </div>
+                    {item.hasDropdown ? (
+                      <>
+                        <button
+                          onClick={() => setIsServicesOpen(!isServicesOpen)}
+                          className="flex items-center justify-between w-full text-lg font-medium text-gray-700 hover:text-green-600 py-2 transition-colors duration-300"
+                        >
+                          {item.name}
+                          <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        <div className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${isServicesOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                          {item.services?.map((service) => (
+                            <Link
+                              key={service.name}
+                              href={service.href}
+                              className={`text-sm text-gray-600 hover:text-green-600 block py-2 transition-colors duration-300 ${
+                                pathname === service.href ? "text-green-600" : ""
+                              }`}
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`text-lg font-medium text-gray-700 hover:text-green-600 block py-2 transition-colors duration-300 ${
+                          pathname === item.href ? "text-green-600" : ""
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
                     )}
                   </div>
                 ))}
 
                 {/* Mobile CTA Button */}
                 <div className="pt-4 border-t border-gray-200">
-                  <Button
-                    className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-300"
-                    asChild
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Link href="/quote">Get Free Quote</Link>
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white" asChild>
+                    <Link href="/quote" onClick={() => setIsOpen(false)}>
+                      Get Free Quote
+                    </Link>
                   </Button>
                 </div>
               </div>

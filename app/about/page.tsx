@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Award, Users, Clock, Shield } from "lucide-react"
 import Image from "next/image"
-import { serviceImages } from "@/public/images/services"
+import { serviceImages } from "@/lib/service-images"
 
 export default function AboutPage() {
   return (

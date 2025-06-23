@@ -72,39 +72,29 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-2">
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+              <div className="flex flex-col space-y-2 text-gray-300">
                 <Link href="/" className="hover:text-green-400">
                   Home
                 </Link>
-              </li>
-              <li>
                 <Link href="/about" className="hover:text-green-400">
-                  About
+                  About Us
                 </Link>
-              </li>
-              <li>
                 <Link href="/services" className="hover:text-green-400">
                   Services
                 </Link>
-              </li>
-              <li>
                 <Link href="/portfolio" className="hover:text-green-400">
                   Portfolio
                 </Link>
-              </li>
-              <li>
-                <Link href="/quote" className="hover:text-green-400">
-                  Get Quote
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-green-400">
                   Contact
                 </Link>
-              </li>
-            </ul>
+                <Link href="/quote" className="hover:text-green-400">
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Social Media & Additional Links */}

@@ -65,11 +65,12 @@ export function HeroSection() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/placeholder.svg?height=600&width=600"
-                alt="Professional landscaping and concrete work"
+                src="/placeholder.jpg"
+                alt="Pro Concrete & Landscaping Services"
                 width={600}
                 height={600}
-                className="object-cover w-full h-full"
+                className="object-cover rounded-2xl shadow-2xl"
+                priority
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">

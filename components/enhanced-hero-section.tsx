@@ -162,7 +162,7 @@ export function EnhancedHeroSection() {
                     }`}
                   >
                     <Image
-                      src={slide.image || "/placeholder.svg"}
+                      src={slide.image || "/placeholder.jpg"}
                       alt={slide.title}
                       fill
                       className="object-cover"
