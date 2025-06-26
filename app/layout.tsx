@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Pro Concrete & Landscaping - Perth's Premier Outdoor Transformation Experts",
   description:
     "Professional concrete and landscaping services in Perth. Transform your outdoor space with quality workmanship, competitive pricing, and expert design. Free quotes available.",
-  keywords: "concrete, landscaping, Perth, outdoor design, driveways, patios, artificial grass, retaining walls",
+  keywords: "concrete, landscaping, Perth, outdoor design, driveways, patios, artificial grass, exposed aggregate",
   authors: [{ name: "Pro Concrete & Landscaping" }],
   creator: "Pro Concrete & Landscaping",
   publisher: "Pro Concrete & Landscaping",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'Next.js'
+  generator: "Next.js",
 }
 
 export const viewport: Viewport = {

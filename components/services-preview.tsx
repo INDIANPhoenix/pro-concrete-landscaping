@@ -26,15 +26,9 @@ const services = [
     image: PLACEHOLDER_IMAGE,
   },
   {
-    name: "Exposed Concrete",
+    name: "Exposed Aggregate",
     description: "Stylish and durable exposed aggregate finishes",
     href: "/services/exposed-concrete",
-    image: PLACEHOLDER_IMAGE,
-  },
-  {
-    name: "Retaining Walls",
-    description: "Functional and attractive retaining wall solutions",
-    href: "/services/retaining-walls",
     image: PLACEHOLDER_IMAGE,
   },
   {
@@ -47,24 +41,6 @@ const services = [
     name: "Letterbox Installation",
     description: "Custom letterbox design and installation",
     href: "/services/letterbox-installation",
-    image: PLACEHOLDER_IMAGE,
-  },
-  {
-    name: "Paving & Pathways",
-    description: "Beautiful and durable paving solutions",
-    href: "/services/paving-pathways",
-    image: PLACEHOLDER_IMAGE,
-  },
-  {
-    name: "Garden Design",
-    description: "Creative and functional garden design services",
-    href: "/services/garden-design",
-    image: PLACEHOLDER_IMAGE,
-  },
-  {
-    name: "Irrigation Systems",
-    description: "Efficient watering solutions for your garden",
-    href: "/services/irrigation-systems",
     image: PLACEHOLDER_IMAGE,
   },
   {
@@ -125,7 +101,7 @@ export function ServicesPreview() {
             >
               <div className="relative h-48">
                 <Image
-                  src={service.image}
+                  src={service.image || "/placeholder.svg"}
                   alt={service.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"

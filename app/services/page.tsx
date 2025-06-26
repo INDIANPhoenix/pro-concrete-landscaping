@@ -4,13 +4,9 @@ import {
   Trees,
   Layers,
   Mountain,
-  Fence,
   Leaf,
   Mail,
   CheckCircle,
-  Footprints,
-  Palette,
-  Droplets,
   Lightbulb,
   Home,
   Waves,
@@ -26,7 +22,7 @@ const services = [
     title: "Landscaping",
     description:
       "Complete landscape design and installation services to transform your outdoor space into a beautiful and functional area that reflects your style.",
-    features: ["Garden Design", "Plant Installation", "Irrigation Systems", "Outdoor Lighting", "Pathway Installation"],
+    features: ["Garden Design", "Plant Installation", "Outdoor Features", "Outdoor Lighting", "Maintenance Services"],
     image: "/placeholder.svg?height=300&width=400",
     bgClass: "bg-gradient-to-br from-green-50 to-emerald-100",
     href: "/services/landscaping",
@@ -59,35 +55,19 @@ const services = [
   },
   {
     icon: Mountain,
-    title: "Exposed Concrete",
+    title: "Exposed Aggregate",
     description:
-      "Decorative exposed concrete finishes for modern and stylish surfaces that combine durability with aesthetic appeal for contemporary homes.",
+      "Decorative exposed aggregate finishes for modern and stylish surfaces that combine durability with aesthetic appeal for contemporary homes.",
     features: [
       "Aggregate Exposure",
       "Polished Finishes",
-      "Colored Concrete",
+      "Colored Aggregate",
       "Textured Surfaces",
       "Sealing & Protection",
     ],
     image: "/placeholder.svg?height=300&width=400",
     bgClass: "bg-gradient-to-br from-stone-50 to-gray-100",
     href: "/services/exposed-concrete",
-  },
-  {
-    icon: Fence,
-    title: "Retaining Walls",
-    description:
-      "Structural retaining walls for slope management, erosion control, and landscape definition with various material options and engineering support.",
-    features: [
-      "Concrete Block Walls",
-      "Natural Stone Walls",
-      "Timber Retaining",
-      "Drainage Solutions",
-      "Engineering Support",
-    ],
-    image: "/placeholder.svg?height=300&width=400",
-    bgClass: "bg-gradient-to-br from-amber-50 to-orange-100",
-    href: "/services/retaining-walls",
   },
   {
     icon: Leaf,
@@ -114,36 +94,6 @@ const services = [
     image: "/placeholder.svg?height=300&width=400",
     bgClass: "bg-gradient-to-br from-blue-50 to-cyan-100",
     href: "/services/letterbox-installation",
-  },
-  {
-    icon: Footprints,
-    title: "Paving & Pathways",
-    description:
-      "Beautiful and functional paving solutions including walkways, garden paths, and decorative paved areas using premium materials.",
-    features: ["Natural Stone Paving", "Brick Pathways", "Decorative Pavers", "Permeable Paving", "Custom Patterns"],
-    image: "/placeholder.svg?height=300&width=400",
-    bgClass: "bg-gradient-to-br from-purple-50 to-violet-100",
-    href: "/services/paving-pathways",
-  },
-  {
-    icon: Palette,
-    title: "Garden Design",
-    description:
-      "Comprehensive garden design services from concept to completion, creating outdoor spaces that are both beautiful and functional.",
-    features: ["3D Design Concepts", "Plant Selection", "Color Schemes", "Seasonal Planning", "Maintenance Plans"],
-    image: "/placeholder.svg?height=300&width=400",
-    bgClass: "bg-gradient-to-br from-pink-50 to-rose-100",
-    href: "/services/garden-design",
-  },
-  {
-    icon: Droplets,
-    title: "Irrigation Systems",
-    description:
-      "Efficient irrigation systems designed to keep your landscape healthy while conserving water and reducing maintenance requirements.",
-    features: ["Drip Irrigation", "Sprinkler Systems", "Smart Controllers", "Water Conservation", "System Maintenance"],
-    image: "/placeholder.svg?height=300&width=400",
-    bgClass: "bg-gradient-to-br from-teal-50 to-cyan-100",
-    href: "/services/irrigation-systems",
   },
   {
     icon: Lightbulb,

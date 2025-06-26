@@ -14,11 +14,7 @@ export const serviceImages = {
     main: PLACEHOLDER_IMAGE,
     gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
   },
-  exposedConcrete: {
-    main: PLACEHOLDER_IMAGE,
-    gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
-  },
-  retainingWalls: {
+  exposedAggregate: {
     main: PLACEHOLDER_IMAGE,
     gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
   },
@@ -27,18 +23,6 @@ export const serviceImages = {
     gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
   },
   letterboxInstallation: {
-    main: PLACEHOLDER_IMAGE,
-    gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
-  },
-  pavingPathways: {
-    main: PLACEHOLDER_IMAGE,
-    gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
-  },
-  gardenDesign: {
-    main: PLACEHOLDER_IMAGE,
-    gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
-  },
-  irrigationSystems: {
     main: PLACEHOLDER_IMAGE,
     gallery: [PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE, PLACEHOLDER_IMAGE],
   },

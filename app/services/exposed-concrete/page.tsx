@@ -4,11 +4,11 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Mountain, ArrowRight, Phone, Star } from "lucide-react"
 import Image from "next/image"
 
-export default function ExposedConcretePage() {
+export default function ExposedAggregatePage() {
   const features = [
     "Decorative aggregate exposure",
-    "Polished concrete finishes",
-    "Colored concrete options",
+    "Polished aggregate finishes",
+    "Colored aggregate options",
     "Textured surface treatments",
     "Sealing and protection",
     "Custom design patterns",
@@ -18,38 +18,38 @@ export default function ExposedConcretePage() {
     {
       name: "David Smith",
       rating: 5,
-      text: "Outstanding exposed concrete work! The finish is exactly what we wanted and has transformed our outdoor space beautifully.",
+      text: "Outstanding exposed aggregate work! The finish is exactly what we wanted and has transformed our outdoor space beautifully.",
       image: "/placeholder-user.jpg",
     },
     {
       name: "Lisa Brown",
       rating: 5,
-      text: "Professional service from start to finish. The exposed concrete patio exceeded our expectations and looks amazing.",
+      text: "Professional service from start to finish. The exposed aggregate patio exceeded our expectations and looks amazing.",
       image: "/placeholder-user.jpg",
     },
     {
       name: "Tom Wilson",
       rating: 5,
-      text: "High quality workmanship and attention to detail. The exposed concrete finish is stunning and very durable.",
+      text: "High quality workmanship and attention to detail. The exposed aggregate finish is stunning and very durable.",
       image: "/placeholder-user.jpg",
     },
   ]
 
   const faqs = [
     {
-      question: "What Is Exposed Concrete And How Is It Different From Regular Concrete?",
+      question: "What Is Exposed Aggregate And How Is It Different From Regular Concrete?",
       answer:
-        "Exposed concrete reveals the decorative aggregate beneath the surface, creating a textured, attractive finish that's both functional and aesthetically pleasing.",
+        "Exposed aggregate reveals the decorative aggregate beneath the surface, creating a textured, attractive finish that's both functional and aesthetically pleasing.",
     },
     {
-      question: "How Long Does Exposed Concrete Take To Complete?",
+      question: "How Long Does Exposed Aggregate Take To Complete?",
       answer:
-        "Most exposed concrete projects take 3-5 days including preparation, pouring, exposure, and sealing, depending on the size and complexity.",
+        "Most exposed aggregate projects take 3-5 days including preparation, pouring, exposure, and sealing, depending on the size and complexity.",
     },
     {
-      question: "Is Exposed Concrete Suitable For All Weather Conditions?",
+      question: "Is Exposed Aggregate Suitable For All Weather Conditions?",
       answer:
-        "Yes! Exposed concrete is extremely durable and weather-resistant, making it perfect for Perth's climate conditions year-round.",
+        "Yes! Exposed aggregate is extremely durable and weather-resistant, making it perfect for Perth's climate conditions year-round.",
     },
   ]
 
@@ -58,7 +58,7 @@ export default function ExposedConcretePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <Image src="/placeholder.jpg" alt="Professional Exposed Concrete" fill className="object-cover" priority />
+          <Image src="/placeholder.jpg" alt="Professional Exposed Aggregate" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -67,13 +67,13 @@ export default function ExposedConcretePage() {
             <div className="text-white">
               <Badge className="mb-4 bg-stone-600/20 text-stone-300 border-stone-400">
                 <Mountain className="w-4 h-4 mr-2" />
-                Exposed Concrete Specialists
+                Exposed Aggregate Specialists
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Your Exposed Concrete Experts in Perth
+                Your Exposed Aggregate Experts in Perth
               </h1>
               <p className="text-xl mb-8 text-gray-200 leading-relaxed">
-                Create stunning decorative concrete surfaces with our exposed concrete services. Beautiful, durable
+                Create stunning decorative aggregate surfaces with our exposed aggregate services. Beautiful, durable
                 finishes that combine functionality with modern aesthetic appeal.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -121,7 +121,7 @@ export default function ExposedConcretePage() {
                 </div>
                 <div>
                   <textarea
-                    placeholder="Tell us about your exposed concrete project..."
+                    placeholder="Tell us about your exposed aggregate project..."
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-stone-500 focus:border-transparent transition-all duration-300"
                   />
@@ -145,22 +145,24 @@ export default function ExposedConcretePage() {
             <div className="relative">
               <Image
                 src="/placeholder.jpg"
-                alt="Exposed Concrete Process"
+                alt="Exposed Aggregate Process"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div>
-              <p className="text-stone-600 font-medium mb-2">Premium Exposed Concrete Solutions</p>
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Your Trusted Perth Exposed Concrete Specialists</h2>
+              <p className="text-stone-600 font-medium mb-2">Premium Exposed Aggregate Solutions</p>
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                Your Trusted Perth Exposed Aggregate Specialists
+              </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Transform your outdoor spaces with our expert exposed concrete services. We specialize in creating
+                Transform your outdoor spaces with our expert exposed aggregate services. We specialize in creating
                 beautiful, durable surfaces that showcase decorative aggregates while providing long-lasting
                 functionality.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Our skilled team uses advanced techniques and premium materials to deliver exposed concrete finishes
+                Our skilled team uses advanced techniques and premium materials to deliver exposed aggregate finishes
                 that enhance your property's value and aesthetic appeal for years to come.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -227,10 +229,10 @@ export default function ExposedConcretePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-stone-600 font-medium mb-2">Complete Exposed Concrete Solutions</p>
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Comprehensive Exposed Concrete Service</h2>
+              <p className="text-stone-600 font-medium mb-2">Complete Exposed Aggregate Solutions</p>
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Comprehensive Exposed Aggregate Service</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                We provide complete exposed concrete solutions from design through to completion. Our experienced team
+                We provide complete exposed aggregate solutions from design through to completion. Our experienced team
                 ensures quality results that meet your specific requirements and budget.
               </p>
               <div className="grid grid-cols-1 gap-4 mb-8">
@@ -256,7 +258,7 @@ export default function ExposedConcretePage() {
             <div className="relative">
               <Image
                 src="/placeholder.jpg"
-                alt="Exposed Concrete Services"
+                alt="Exposed Aggregate Services"
                 width={600}
                 height={500}
                 className="rounded-lg shadow-lg"
@@ -269,9 +271,9 @@ export default function ExposedConcretePage() {
       {/* CTA Section */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Begin Your Exposed Concrete Project Today!</h2>
+          <h2 className="text-4xl font-bold mb-4">Begin Your Exposed Aggregate Project Today!</h2>
           <p className="text-xl mb-8 text-gray-300">
-            Ready for professional exposed concrete work? Get started with a free consultation.
+            Ready for professional exposed aggregate work? Get started with a free consultation.
           </p>
           <div className="max-w-md mx-auto">
             <div className="flex gap-4">
@@ -292,7 +294,7 @@ export default function ExposedConcretePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Exposed Concrete FAQs</h2>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Exposed Aggregate FAQs</h2>
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
@@ -312,9 +314,9 @@ export default function ExposedConcretePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Download Exposed Concrete Information Pack</h2>
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">Download Exposed Aggregate Information Pack</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Get our comprehensive guide with exposed concrete tips, design ideas, and project inspiration. Download
+                Get our comprehensive guide with exposed aggregate tips, design ideas, and project inspiration. Download
                 your free copy today!
               </p>
               <Button className="bg-stone-600 hover:bg-stone-700 transition-all duration-300 hover:scale-105" size="lg">

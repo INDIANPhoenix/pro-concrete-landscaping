@@ -12,18 +12,18 @@ import { LoadingSpinner } from "@/components/loading-spinner"
 const slides = [
   {
     title: "Turning Dirt Into Dreams",
-    subtitle: "Professional concrete and landscaping services",
-    image: serviceImages.landscaping.main,
+    subtitle: "Professional landscaping and outdoor services",
+    image: serviceImages.landscaping?.main ?? "/placeholder.jpg",
   },
   {
     title: "Expert Concreting Solutions",
-    subtitle: "Driveways, patios, and structural concrete work",
-    image: serviceImages.concreting.main,
+    subtitle: "Driveways, patios and structural concrete work",
+    image: serviceImages.concreting?.main ?? "/placeholder.jpg",
   },
   {
-    title: "Beautiful Landscape Design",
-    subtitle: "Transform your outdoor space into paradise",
-    image: serviceImages.gardenDesign.main,
+    title: "Perfect Lawn All-Year Round",
+    subtitle: "Premium artificial-grass installation",
+    image: serviceImages.artificialGrass?.main ?? "/placeholder.jpg",
   },
 ]
 

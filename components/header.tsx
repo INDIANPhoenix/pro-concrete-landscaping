@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, Phone, Mail, ChevronDown, X } from "lucide-react"
+import { Menu, Phone, Mail, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
@@ -24,13 +24,9 @@ export function Header() {
         { name: "Landscaping", href: "/services/landscaping" },
         { name: "Concreting", href: "/services/concreting" },
         { name: "Artificial Grass", href: "/services/artificial-grass" },
-        { name: "Exposed Concrete", href: "/services/exposed-concrete" },
-        { name: "Retaining Walls", href: "/services/retaining-walls" },
+        { name: "Exposed Aggregate", href: "/services/exposed-concrete" },
         { name: "Mulching", href: "/services/mulching" },
         { name: "Letterbox Installation", href: "/services/letterbox-installation" },
-        { name: "Paving & Pathways", href: "/services/paving-pathways" },
-        { name: "Garden Design", href: "/services/garden-design" },
-        { name: "Irrigation Systems", href: "/services/irrigation-systems" },
         { name: "Outdoor Lighting", href: "/services/outdoor-lighting" },
         { name: "Decking", href: "/services/decking" },
         { name: "Pool Surrounds", href: "/services/pool-surrounds" },
@@ -78,9 +74,9 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2" aria-label="Pro Concrete & Landscaping Home">
             <div className="w-10 h-10 sm:w-12 sm:h-12 relative">
-              <Image 
-                src="/placeholder-logo.png" 
-                alt="Pro Concrete & Landscaping Logo" 
+              <Image
+                src="/placeholder-logo.png"
+                alt="Pro Concrete & Landscaping Logo"
                 fill
                 className="object-cover"
                 priority
@@ -169,9 +165,13 @@ export function Header() {
                           className="flex items-center justify-between w-full text-lg font-medium text-gray-700 hover:text-green-600 py-2 transition-colors duration-300"
                         >
                           {item.name}
-                          <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                          <ChevronDown
+                            className={`h-5 w-5 transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`}
+                          />
                         </button>
-                        <div className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${isServicesOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <div
+                          className={`ml-4 space-y-2 overflow-hidden transition-all duration-300 ${isServicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
+                        >
                           {item.services?.map((service) => (
                             <Link
                               key={service.name}

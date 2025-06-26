@@ -5,15 +5,15 @@ const services = [
   { name: "Landscaping", path: "/services/landscaping" },
   { name: "Concreting", path: "/services/concreting" },
   { name: "Artificial Grass", path: "/services/artificial-grass" },
-  { name: "Exposed Concrete", path: "/services/exposed-concrete" },
-  { name: "Retaining Walls", path: "/services/retaining-walls" },
+  { name: "Exposed Aggregate", path: "/services/exposed-concrete" },
   { name: "Mulching", path: "/services/mulching" },
   { name: "Letterbox Installation", path: "/services/letterbox-installation" },
-  { name: "Paving & Pathways", path: "/services/paving-pathways" },
-  { name: "Garden Design", path: "/services/garden-design" },
-  { name: "Irrigation Systems", path: "/services/irrigation-systems" },
   { name: "Outdoor Lighting", path: "/services/outdoor-lighting" },
   { name: "Decking", path: "/services/decking" },
+  { name: "Pool Surrounds", path: "/services/pool-surrounds" },
+  { name: "Driveway Construction", path: "/services/driveway-construction" },
+  { name: "Garden Maintenance", path: "/services/garden-maintenance" },
+  { name: "Pergolas & Gazebos", path: "/services/pergolas-gazebos" },
 ]
 
 export function Footer() {
@@ -64,7 +64,7 @@ export function Footer() {
                 <div key={service.path}>
                   <Link href={service.path} className="text-gray-400 hover:text-green-400">
                     {service.name}
-                </Link>
+                  </Link>
                 </div>
               ))}
             </div>
